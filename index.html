@@ -25,14 +25,30 @@
   <body>
     <header class="header hwrapper">
       <p class="logo">Gwen Stacy</p>
-      <div class="nav-toggle">
+      <nav class="nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#companies">Testimonios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="nav-toggle" id="navToggle">
         <i>
-          <img src="./src/assets/icon-menu.svg" alt="" />
+          <img src="./src/assets/icon-menu.svg" alt="Sidenav Toggle" />
         </i>
       </div>
     </header>
+    <div id="sidenav">
+      <div class="nav">
+        <h3><a href="#home" class="active">Home</a></h3>
+        <h3><a href="#projects">Proyectos</a></h3>
+        <h3><a href="#companies">Testimonios</a></h3>
+        <h3><a href="#contact">Contacto</a></h3>
+      </div>
+    </div>
     <main class="main hwrapper">
-      <div class="hero">
+      <div class="hero section" id="home">
         <h4>
           Diseño y código de punta a punta de experiencias digitales
           innovadoras, sostenibles y flexibles.
@@ -44,48 +60,109 @@
         </p>
         <button href="#!" class="hero__button">Descargar currículum</button>
       </div>
-      <div class="projects">
+      <div class="projects section" id="projects">
         <h4>El trabajo que hago y los proyectos a los que he ayudado.</h4>
         <div class="project">
-          <img src="./src/assets/projects/NikoMobile.png" alt="Proyecto Niko" class="project__image">
+          <picture>
+            <source
+              srcset="./src/assets/projects/Niko.png"
+              media="(min-width: 900px)"
+            />
+            <img
+              class="project__image"
+              src="./src/assets/projects/NikoMobile.png"
+              alt="Proyecto Niko"
+            />
+          </picture>
           <p class="project__title">Niko</p>
-          <p class="project__description">Creando un diseño visual elegante para una plataforma de calzado.</p>
-          <button class="btn btn--secondary">Ver código de proyecto</button>
-          <button class="btn btn--primary">Ver detalle del proyecto</button>
+          <p class="project__description">
+            Creando un diseño visual elegante para una plataforma de calzado.
+          </p>
+          <div class="buttons">
+            <button class="btn btn--secondary">Ver código de proyecto</button>
+            <button class="btn btn--primary">Ver detalle del proyecto</button>
+          </div>
         </div>
         <div class="project">
-          <img src="./src/assets/projects/AmazonasMobile.png" alt="Proyecto Niko" class="project__image">
+          <picture>
+            <source
+              srcset="./src/assets/projects/Amazonas.png"
+              media="(min-width: 900px)"
+            />
+            <img
+              class="project__image"
+              src="./src/assets/projects/AmazonasMobile.png"
+              alt="Proyecto Niko"
+            />
+          </picture>
           <p class="project__title">Amazonas</p>
-          <p class="project__description">Rediseñando el sitio Amazonas, aplicando múltiples funcionalidades</p>
-          <button class="btn btn--secondary">Ver código de proyecto</button>
-          <button class="btn btn--primary">Ver detalle del proyecto</button>
+          <p class="project__description">
+            Rediseñando el sitio Amazonas, aplicando múltiples funcionalidades
+          </p>
+          <div class="buttons">
+            <button class="btn btn--secondary">Ver código de proyecto</button>
+            <button class="btn btn--primary">Ver detalle del proyecto</button>
+          </div>
         </div>
         <div class="project">
-          <img src="./src/assets/projects/SpotifuMobile.png" alt="Proyecto Niko" class="project__image">
+          <picture>
+            <source
+              srcset="./src/assets/projects/Spotifu.png"
+              media="(min-width: 900px)"
+            />
+            <img
+              class="project__image"
+              src="./src/assets/projects/SpotifuMobile.png"
+              alt="Proyecto Niko"
+            />
+          </picture>
           <p class="project__title">Spotifu</p>
-          <p class="project__description">Con este ejercicio podrás desafiar tus habilidades como desarrollador frontend.</p>
-          <button class="btn btn--secondary">Ver código de proyecto</button>
-          <button class="btn btn--primary">Ver detalle del proyecto</button>
+          <p class="project__description">
+            Con este ejercicio podrás desafiar tus habilidades como
+            desarrollador frontend.
+          </p>
+          <div class="buttons">
+            <button class="btn btn--secondary">Ver código de proyecto</button>
+            <button class="btn btn--primary">Ver detalle del proyecto</button>
+          </div>
         </div>
         <div class="project">
-          <img src="./src/assets/projects/NetnetMobile.png" alt="Proyecto Niko" class="project__image">
+          <picture>
+            <source
+              srcset="./src/assets/projects/Netnet.png"
+              media="(min-width: 900px)"
+            />
+            <img
+              class="project__image"
+              src="./src/assets/projects/NetnetMobile.png"
+              alt="Proyecto Niko"
+            />
+          </picture>
           <p class="project__title">Netnet</p>
-          <p class="project__description">Netnet es una de las plataformas de entretenimiento con más ranknig a nivel...</p>
-          <button class="btn btn--secondary">Ver código de proyecto</button>
-          <button class="btn btn--primary">Ver detalle del proyecto</button>
+          <p class="project__description">
+            Netnet es una de las plataformas de entretenimiento con más ranknig
+            a nivel...
+          </p>
+          <div class="buttons">
+            <button class="btn btn--secondary">Ver código de proyecto</button>
+            <button class="btn btn--primary">Ver detalle del proyecto</button>
+          </div>
         </div>
-        
       </div>
-      <div class="companies">
-        <h4>He tenido el privilegio de trabajar con múltiples empresas como.</h4>
+      <div class="companies section" id="companies">
+        <h4>
+          He tenido el privilegio de trabajar con múltiples empresas como.
+        </h4>
         <div class="logos">
-          <img src="./src/assets/Nike.svg" alt="" class="company">
-          <img src="./src/assets/Adidas.svg" alt="" class="company">
-          <img src="./src/assets/Telcel.svg" alt="" class="company">
+          <img src="./src/assets/Nike.svg" alt="" class="company" />
+          <img src="./src/assets/Adidas.svg" alt="" class="company" />
+          <img src="./src/assets/Telcel.svg" alt="" class="company" />
         </div>
       </div>
-      <div class="contact">
-        <h4>¿Quieres trabajar conmigo o simplemente tomar un café? - ¡Hazme ping!</h4>
+      <div class="contact section" id="contact">
+        <h4>
+          ¿Quieres trabajar conmigo o simplemente tomar un café? - ¡Hazme ping!
+        </h4>
         <a href="#!">gwenstacy@gmail.com</a>
       </div>
     </main>
@@ -107,5 +184,6 @@
         </ul>
       </div>
     </footer>
+    <script src="./src/js/app.js"></script>
   </body>
 </html>

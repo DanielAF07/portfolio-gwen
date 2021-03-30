@@ -1,18 +1,57 @@
 :root {
-  --bg: rgba(22,22,26,1);
-  --white: rgba(255,255,254,1);
-  --primary: rgba(127,90,240,1);
-  --secondary: rgba(114,117,126,1);
-  --gray: rgba(148,161,178,1);
+  --bg: rgba(22, 22, 26, 1);
+  --white: rgba(255, 255, 254, 1);
+  --primary: rgba(127, 90, 240, 1);
+  --secondary: rgba(114, 117, 126, 1);
+  --gray: rgba(148, 161, 178, 1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
   color: var(--white);
-  font-family: 'Arvo', serif;
+  font-family: "Arvo", serif;
 }
 
 body {
   background: var(--bg);
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 80px;
+  margin: 0;
+  color: var(--white);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 76px;
+  margin: 0;
+  color: var(--white);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  margin: 0;
+  color: var(--white);
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26.4px;
+  height: 106px;
+  margin: 0;
+  color: var(--white);
 }
 
 .hwrapper {
@@ -26,6 +65,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
 }
 
 .logo {
@@ -38,6 +81,10 @@ body {
   letter-spacing: 1%;
 }
 
+.nav {
+  display: none;
+}
+
 .nav-toggle {
   width: 24px;
   height: 24px;
@@ -46,15 +93,6 @@ body {
 .hero {
   padding-top: 80px;
   padding-bottom: 80px;
-}
-
-h4 {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 26.4px;
-  height: 106px;
-  margin: 0;
-  color: var(--white)
 }
 
 .hero p {
@@ -113,6 +151,12 @@ h4 {
   margin: 0;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .btn {
   font-weight: 400;
   font-size: 18px;
@@ -121,6 +165,7 @@ h4 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  border: 1px solid var(--primary);
 }
 
 .btn--primary {
@@ -130,7 +175,6 @@ h4 {
 .btn--secondary {
   background: transparent;
   color: var(--primary);
-  border: 1px solid var(--primary);
 }
 
 .logos {
@@ -192,6 +236,227 @@ h4 {
   padding-top: 16px;
   font-size: 14px;
   line-height: 27px;
-  color: var(--white)
+  color: var(--white);
 }
 
+#sidenav {
+  position: fixed;
+  background: var(--bg);
+  width: 0vw;
+  overflow-x: hidden;
+  height: 100vh;
+  gap: 48px;
+  top: 0%;
+  left: 100%;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 9;
+}
+
+#sidenav.show {
+  width: 100vw;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+#sidenav .nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+#sidenav h3 {
+  margin: 0;
+}
+
+#sidenav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-size: 32px;
+  line-height: 32px;
+  transition: color 0.5s linear;
+}
+#sidenav a.active {
+  color: var(--white);
+  transition: color 0.3s linear;
+}
+
+@media screen and (min-width: 1000px) {
+  .hwrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 89px;
+    padding-right: 89px;
+    max-inline-size: 1188px;
+    margin: auto;
+  }
+
+  .header {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .nav {
+    display: inline-block;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  #sidenav {
+    display: none;
+  }
+
+  .nav {
+    text-transform: uppercase;
+  }
+
+  .nav li {
+    list-style-type: none;
+  }
+
+  .nav a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 27px;
+    color: var(--secondary);
+    transition: color 0.3s ease;
+  }
+
+  .nav a.active {
+    color: var(--white);
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    height: 24px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 80px;
+    margin: 0;
+    color: var(--white);
+    height: auto;
+  }
+
+  .hero p {
+    padding: 24px 0;
+    max-width: 580px;
+  }
+  
+  .projects {
+    padding: 80px 0;
+    text-align: center;
+    max-inline-size: 781px;
+    margin: auto;
+  }
+
+  .project {
+    text-align: left;
+  }
+  
+  .project:first-of-type {
+    padding-top: 80px;
+  }
+
+  .project__image {
+    width: auto;
+  }
+
+  .project__description {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .buttons {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .btn {
+    padding: 12px 24px;
+  }
+
+  .companies h4 {
+    font-size: 64px;
+    line-height: 76px;
+    padding: 80px 0;
+  }
+
+  .logos {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .company {
+    height: 374px;
+    width: 347px;
+  }
+
+  .contact {
+    gap: 80px;
+  }
+  .contact a,
+  .contact h4 {
+    font-size: 64px;
+    line-height: 76px;
+  }
+
+  .footer {
+    flex-direction: row;
+    padding: 80px 0;
+  }
+
+  .social,
+  .contact-info {
+    min-width: 273px;
+
+  }
+}
+/* 
+h1 {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 80px;
+  margin: 0;
+  color: var(--white);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 76px;
+  margin: 0;
+  color: var(--white);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  margin: 0;
+  color: var(--white);
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26.4px;
+  height: 106px;
+  margin: 0;
+  color: var(--white);
+}
+ */
